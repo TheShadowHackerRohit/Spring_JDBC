@@ -1,6 +1,7 @@
 package com.springJdbc;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,8 @@ import java.util.*;
 @RestController
 public class BookController {
 
-    BookService bookService = new BookService();
+    @Autowired
+    BookService bookService;
 
     @PostMapping("/add-book")
     public ResponseEntity addBook(@RequestParam String author, @RequestParam String title, @RequestParam int pages) throws Exception{

@@ -13,24 +13,22 @@ import javax.sql.DataSource;
 @Configuration
 public class DatasourceConfig {
 
-    @Bean(name = "dataSource")
+    @Bean
     public DataSource dataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
 
-        dataSourceBuilder.url("jdbc:mysql://localhost:3306/jdbc_database");
+        dataSourceBuilder.url("jdbc:mysql://localhost:3306/spring_jdbc");
         dataSourceBuilder.username("root");
         dataSourceBuilder.password("Rohit@123");
-//        dataSourceBuilder.driverClassName("com.mysql.jdbc.Driver");
-
         return dataSourceBuilder.build();
     }
 
-    @Bean(name = "transactionManager")
+    @Bean
     public DataSourceTransactionManager dataSourceTransactionManager(){
         return new DataSourceTransactionManager(dataSource());
     }
 
-    @Bean(name = "jdbcTemplate")
+    @Bean
     public JdbcTemplate jdbcTemplate(){
         return new JdbcTemplate(dataSource());
     }
