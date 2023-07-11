@@ -20,20 +20,20 @@ public class SpringJdbcApplication {
 	}
 
 
-	@Bean
-	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-		return new JdbcTemplate(dataSource);
-	}
-
-	@Bean
-	public DataSource dataSource() {
-
-		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-		dataSourceBuilder.url("jdbc:mysql://localhost:3306/spring_jdbc");
-		dataSourceBuilder.username("root");
-		dataSourceBuilder.password("Rohit@123");
-		return dataSourceBuilder.build();
-	}
+//	@Bean
+//	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+//		return new JdbcTemplate(dataSource);
+//	}
+//
+//	@Bean
+//	public DataSource dataSource() {
+//
+//		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+//		dataSourceBuilder.url("jdbc:mysql://localhost:3306/spring_jdbc");
+//		dataSourceBuilder.username("root");
+//		dataSourceBuilder.password("Rohit@123");
+//		return dataSourceBuilder.build();
+//	}
 
 
 }
